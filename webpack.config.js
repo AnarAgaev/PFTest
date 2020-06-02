@@ -10,7 +10,25 @@ module.exports = (env = {}) => {
   const getStyleLoaders = () => {
     return [
       isProd ? MiniCssExtractPlugin.loader : 'style-loader',
-      'css-loader',
+      isProd ? 'css-loader' :  {
+          loader: 'css-loader',
+          options: { sourceMap: true }
+        },
+      isProd ? {
+          loader: 'postcss-loader',
+          options: {
+            config: {
+              path: './postcss.config.js'
+            }
+          }
+        } : {
+          loader: 'postcss-loader',
+          options: {
+            plugins: [
+              require('autoprefixer')()
+            ]
+          }
+        },
       'sass-loader'
     ];
   };
