@@ -1,2 +1,2 @@
 # PFTest
-Test job for Pizza Fabrica comp.
+Test work for Pizza Fabrica comp.

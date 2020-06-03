@@ -86,26 +86,13 @@ module.exports = (env = {}) => {
               }
             }
           ]
-        },
-
-        // Loading fonts
-        {
-          test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
-          use: [
-            {
-              loader: 'file-loader',
-              options: {
-                outputPath: 'fonts',
-                name: '[name].[ext]'
-              }
-            }
-          ]
         }
       ]
     },
 
     plugins: getPlugins(),
 
+    devtool: 'inline-source-map',
     devServer: {
       open: true
     }

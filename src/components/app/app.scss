@@ -1,0 +1,25 @@
+@import "~bootstrap/scss/bootstrap-grid";
+
+// Sticky footer
+html,
+body,
+#root {
+  min-height: 100vh;
+  margin: 0;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 0;
+}
+
+.header,
+.footer {
+  flex: none;
+}
+
+.main {
+  flex: 1 0 auto;
+}
