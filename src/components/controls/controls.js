@@ -1,23 +1,27 @@
 import React from "react";
+import { connect } from "react-redux";
 import { Col, Row } from "react-bootstrap";
 import Select from "../select";
+import { getPosition } from "../../utils/get-position";
+import getSortMethod from "../../utils/get-sort-method";
 import Checkbox from "../checkbox";
+import { filterItemsByRole, sortItemsBy } from "../../actions";
 import "./controls.scss";
 
 const sortList = [
   { id: 1, val: 'name', caption: "Имя" },
   { id: 2, val: 'birthday', caption: "Дата рождения" },
-  { id: 3, val: 'null', caption: "Не сортировать" }
+  { id: 3, val: false, caption: "Не сортировать" }
 ];
 
 const filterList = [
   { id: 1, val: 'waiter', caption: "Официант" },
   { id: 2, val: 'driver', caption: "Водитель" },
   { id: 3, val: 'cook', caption: "Повар" },
-  { id: 4, val: 'null', caption: "Показать всех" }
+  { id: 4, val: false, caption: "Показать всех" }
 ];
 
-const Controls = () => {
+const Controls = ({ filterRole, sortMethod }) => {
   return (
     <form className="controls">
       <Row>
@@ -27,7 +31,9 @@ const Controls = () => {
               Фильтр
             </span>
             <Select list={ filterList }
-                    placeholder={'Выберите фильтр'} />
+              actionFunc={ filterItemsByRole }
+              value={ getPosition(filterRole) || '' }
+              placeholder={'Выберите фильтр'} />
             <Checkbox />
           </div>
         </Col>
@@ -37,7 +43,9 @@ const Controls = () => {
               Сортировка
             </span>
             <Select list={ sortList }
-                    placeholder={'Выберите метод сортировки'} />
+              actionFunc={ sortItemsBy }
+              value={ getSortMethod(sortMethod) || '' }
+              placeholder={'Выберите метод сортировки'} />
           </div>
         </Col>
       </Row>
@@ -45,4 +53,10 @@ const Controls = () => {
   )
 };
 
-export default Controls;
+const mapStateToProps = ({ filterRole, sortMethod }) => {
+  return { filterRole, sortMethod };
+};
+
+export default connect(
+  mapStateToProps
+)(Controls);

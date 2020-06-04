@@ -4,7 +4,10 @@ const reducer = (state, action) => {
     return {
       data: [],
       loading: false,
-      error: null
+      error: null,
+      filterArchive: false,
+      filterRole: false,
+      sortMethod: false
     };
   }
 
@@ -18,11 +21,9 @@ const reducer = (state, action) => {
 
     case 'FETCH_DATA_SUCCESS':
       return {
-        data: [
-          ...action.data
-        ],
+        ...state,
+        data: [ ...action.data ],
         loading: false,
-        error: null
       };
 
     case 'FETCH_DATA_FAILURE':
@@ -30,6 +31,25 @@ const reducer = (state, action) => {
         ...state,
         loading: false,
         error: action.error
+      };
+
+    case 'FILTER_ARCHIVE_ITEMS':
+      return {
+        ...state,
+        filterArchive: action.filterState
+      };
+
+    case 'FILTER_ROLE_ITEMS':
+      return {
+        ...state,
+        filterRole: action.role
+      };
+
+    case 'SORT_DATA':
+      return {
+        ...state,
+        data: [ ...action.data ],
+        sortMethod: action.sortMethod
       };
 
     default:

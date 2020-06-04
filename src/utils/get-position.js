@@ -1,7 +1,7 @@
 const _positionList = {
-  waiter: 'официант',
-  driver: 'водитель',
-  cook: 'повар'
+  waiter: 'Официант',
+  driver: 'Водитель',
+  cook: 'Повар'
 };
 
 const getPosition = (position) => {

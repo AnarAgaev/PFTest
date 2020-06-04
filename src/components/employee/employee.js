@@ -1,8 +1,21 @@
 import React from "react";
+import {connect} from "react-redux";
 import { getPosition } from "../../utils/get-position";
 import "./employee.scss";
 
-const Employee = ({ id, name, role, isArchive, phone, birthday }) => {
+const Employee = ({
+    id, name, role, isArchive,
+    phone, birthday, filterArchive, filterRole
+  }) => {
+
+  const visibleArchive = !(filterArchive && !isArchive);
+  const visibleRole = filterRole
+    ? filterRole === role
+    : true;
+
+  const clazz = visibleArchive && visibleRole
+    ? 'employees-list__item'
+    : 'employees-list__item employees-list__item_hide';
 
   const title = `${id}: ${name} (${getPosition(role)}),
     Телефон: ${phone},
@@ -10,7 +23,7 @@ const Employee = ({ id, name, role, isArchive, phone, birthday }) => {
     В архиве: ${isArchive ? 'да' : 'нет'}`;
 
  return (
-   <tr className="employees-list__item" title={ title }>
+   <tr className={ clazz } title={ title }>
      <td className="employees-list__name">
        { name }
      </td>
@@ -24,4 +37,10 @@ const Employee = ({ id, name, role, isArchive, phone, birthday }) => {
  );
 };
 
-export default Employee;
+const mapStateToProps = ({ filterArchive, filterRole }) => {
+  return { filterArchive, filterRole };
+};
+
+export default   connect(
+  mapStateToProps
+)(Employee);
