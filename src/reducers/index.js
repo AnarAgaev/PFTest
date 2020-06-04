@@ -1,10 +1,40 @@
-import updateData from "./data-list";
-
 const reducer = (state, action) => {
 
-  return {
-    dataList: updateData(state, action),
-  };
+  if (state === undefined) {
+    return {
+      data: [],
+      loading: false,
+      error: null
+    };
+  }
+
+  switch (action.type) {
+
+    case 'FETCH_DATA_REQUEST':
+      return {
+        ...state,
+        loading: true
+      };
+
+    case 'FETCH_DATA_SUCCESS':
+      return {
+        data: [
+          ...action.data
+        ],
+        loading: false,
+        error: null
+      };
+
+    case 'FETCH_DATA_FAILURE':
+      return {
+        ...state,
+        loading: false,
+        error: action.error
+      };
+
+    default:
+      return state;
+  }
 };
 
 export default reducer;

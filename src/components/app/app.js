@@ -10,7 +10,7 @@ import "./app.scss";
 const App = () => {
   return (
     <>
-      <Header />
+      {/*<Header />*/}
       <main className="main">
         <Switch>
           <Route path="/" component={ Main } exact />
@@ -18,7 +18,7 @@ const App = () => {
           <Redirect to="/page-not-found" />
         </Switch>
       </main>
-      <Footer />
+      {/*<Footer />*/}
       <Spinner />
     </>
   );

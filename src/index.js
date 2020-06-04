@@ -2,22 +2,23 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { BrowserRouter as Router } from "react-router-dom";
-import { BlogServiceProvider } from "./components/blog-service-context";
+import { DataServiceProvider } from "./components/data-service-context";
 import ErrorBoundary from "./components/error-boundary";
-import BlogService from "./services/blog-service";
+import DataService from "./services/data-service";
 import App from "./components/app";
 import store from "./store";
 
-const blogService = new BlogService();
+// Создаём экземпляр сервиса получения данных, что бы передать его через контекст
+const dataService = new DataService();
 
 ReactDOM.render(
   <Provider store={ store }>
     <ErrorBoundary>
-      <BlogServiceProvider value={ blogService }>
+      <DataServiceProvider value={ dataService }>
         <Router>
           <App />
         </Router>
-      </BlogServiceProvider>
+      </DataServiceProvider>
     </ErrorBoundary>
   </Provider>,
   document.getElementById('root')

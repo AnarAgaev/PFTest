@@ -1,0 +1,19 @@
+.select__option {
+   padding: 0.5em calc(1em + 3px);
+   font-size: 0.9rem;
+   background-color: white;
+   cursor: pointer;
+   transition: background-color .3s ease-out;
+
+   &:hover {
+     background-color: rgba(0,0,0,.03);
+   }
+
+   &:first-child {
+     padding-top: 1.2rem;
+   }
+
+   &:last-child {
+     padding-bottom: 1.2rem;
+   }
+ }

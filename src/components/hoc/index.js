@@ -1,3 +1,3 @@
-import withBlogService from './with-blog-service';
+import withListService from './with-list-service';
 
-export default withBlogService;
+export default withListService;

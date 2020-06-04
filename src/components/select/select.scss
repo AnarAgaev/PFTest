@@ -1,0 +1,30 @@
+.select {
+  width: 100%;
+  position: relative;
+
+  input {
+    cursor: pointer;
+
+    &:focus + ul {
+      opacity: 1;
+      max-height: 999px;
+      z-index: 1;
+      transform: translateY(3px);
+      transition: z-index 0s, opacity .3s ease-out, max-height .3s ease-out, transform .3s ease-out;
+    }
+  }
+
+  &__data-list {
+    background-color: white;
+    border-radius: 0.3rem;
+    border: 1px solid rgba(0,0,0,0.1);
+    position: absolute;
+    width: 100%;
+    opacity: 0;
+    max-height: 0;
+    z-index: 0;
+    transform: translateY(10px);
+    transition: z-index .5s 0s, opacity .3s ease-out, max-height .3s ease-out, transform .3s ease-out;
+  }
+}
+

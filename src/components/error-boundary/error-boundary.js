@@ -20,8 +20,8 @@ class ErrorBoundary extends Component {
   }
 }
 
-const mapStateToProps = ({ dataList: { error: articlesError } }) => {
-  return { articlesError };
+const mapStateToProps = ({ error } ) => {
+  return { error };
 };
 
 const mapDispatchToProps = { fetchDataFailure };

@@ -1,7 +1,6 @@
 import React from "react";
 
 const renderElementList = (list, Component, payload) => {
-
   if (!list.length) {
     return null;
   }

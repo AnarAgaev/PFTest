@@ -1,0 +1,27 @@
+.employees-list {
+  &__item {
+    background-color: rgba(0,0,0,0);
+    transition: .3s background-color ease-out;
+    cursor: pointer;
+
+    &:hover {
+      background-color: rgba(0,0,0,.03);
+    }
+
+    td {
+      padding: 0.7rem;
+    }
+  }
+
+  &__name {
+    font-weight: bold;
+    border-top-left-radius: 0.3rem;
+    border-bottom-left-radius: 0.3rem;
+  }
+
+  &__phone {
+    text-align: right;
+    border-top-right-radius: 0.3rem;
+    border-bottom-right-radius: 0.3rem;
+  }
+}

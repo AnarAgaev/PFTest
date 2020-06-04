@@ -1,9 +1,14 @@
 import React from "react";
 import './spinner.scss';
 
-const Spinner = () => {
+const Spinner = ({ visible }) => {
+
+  const clazz = visible
+    ? 'spinner visible'
+    : 'spinner';
+
   return (
-    <div className="spinner" >
+    <div className={ clazz } >
       <div className="loading">
         <div />
         <div />
