@@ -94,6 +94,9 @@ module.exports = (env = {}) => {
 
     devtool: 'inline-source-map',
     devServer: {
+      historyApiFallback: true,
+      contentBase: './',
+      hot: true,
       open: true
     }
   };
