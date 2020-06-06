@@ -5,9 +5,27 @@ const reducer = (state, action) => {
       data: [],
       loading: false,
       error: null,
+
+      // Свойства для фильтрации данных формы
       filterArchive: false,
       filterRole: false,
-      sortMethod: false
+      sortMethod: false,
+
+      // В свойстве employeeForm храним данные
+      // формы и ошибки для контроливуемых элементов формы
+      employeeForm: {
+        name: '',
+        phone: '',
+        birthday: '',
+        role: '',
+        isArchive: false,
+
+        // Свойства для ошибок в полях формы
+        validName: true,
+        validPhone: true,
+        validBirthday: true,
+        validRole: true
+      }
     };
   }
 
@@ -50,6 +68,63 @@ const reducer = (state, action) => {
         ...state,
         data: [ ...action.data ],
         sortMethod: action.sortMethod
+      };
+
+    case 'PUSH_FORM_DATA_TO_STORE':
+      return {
+        ...state,
+        employeeForm: {
+          ...state.employeeForm,
+          [action.propName]: action.newState
+        }
+      };
+
+    case 'SET_EMPLOYEE_FORM':
+      const { id, name, phone, birthday,
+        role, isArchive } = action.payload;
+
+      return {
+        ...state,
+        employeeForm: {
+          ...state.employeeForm,
+          id: id,
+          name: name,
+          phone: phone,
+          birthday: birthday,
+          role: role,
+          isArchive: isArchive
+        }
+      };
+
+    case 'CLEAN_FORM':
+      return {
+        ...state,
+        employeeForm: {
+          name: '',
+          phone: '',
+          birthday: '',
+          role: '',
+          isArchive: false,
+          validName: true,
+          validPhone: true,
+          validBirthday: true,
+          validRole: true
+        }
+      };
+
+    case 'ADD_EMPLOYEE':
+      return {
+        ...state,
+        data: [
+          ...state.data,
+          action.employee
+        ]
+      };
+
+    case 'UPDATE_EMPLOYEE':
+      return {
+        ...state,
+        data: [ ...action.payload ]
       };
 
     default:

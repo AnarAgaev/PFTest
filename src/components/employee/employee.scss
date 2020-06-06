@@ -1,19 +1,60 @@
 .employees-list {
   &__item {
-    background-color: rgba(0,0,0,0);
-    transition: .3s background-color ease-out;
-    cursor: pointer;
 
-    &:hover {
-      background-color: rgba(0,0,0,.03);
+    &:nth-child(even) {
+      background-color: rgba(0,0,0,.01);
     }
 
-    td {
-      padding: 0.7rem;
+    a {
+      color: #222222;
+      text-decoration: none;
+      transition: color .3s ease;
+      display: inline-block;
+      padding: 0.6rem;
+      position: relative;
+
+      &::before {
+        content: '';
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 50%;
+        height: 0;
+        width: 100%;
+        background-color: rgba(0,0,0,0);
+        transition: all .3s ease-out;
+        border-radius: 0.3rem;
+      }
+
+      &:hover {
+        color: blue;
+
+        &::before {
+          height: 100%;
+          top: 0;
+          background-color: rgba(0,0,0,.03);
+        }
+      }
     }
 
     &_hide {
-      display: none;
+      display: none !important;
+    }
+    
+    @media (max-width: 768px) {
+      display: flex;
+      flex-direction: column;
+
+      td {
+        &:nth-child(2) {
+          padding: 0 0.6rem;
+        }
+
+        &:last-child {
+          padding: 0.6rem;
+          text-align: left;
+        }
+      }
     }
   }
 

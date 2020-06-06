@@ -2,6 +2,7 @@ import React from "react";
 import {connect} from "react-redux";
 import { getPosition } from "../../utils/get-position";
 import "./employee.scss";
+import {Link} from "react-router-dom";
 
 const Employee = ({
     id, name, role, isArchive,
@@ -25,7 +26,9 @@ const Employee = ({
  return (
    <tr className={ clazz } title={ title }>
      <td className="employees-list__name">
-       { name }
+       <Link to={`edit-employee/${id}`}>
+         { name }
+       </Link>
      </td>
      <td className="employees-list__role">
        { getPosition(role) }

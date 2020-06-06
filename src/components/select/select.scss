@@ -8,7 +8,7 @@
     &:focus + ul {
       opacity: 1;
       max-height: 999px;
-      z-index: 1;
+      z-index: 3;
       transform: translateY(3px);
       transition: z-index 0s, opacity .3s ease-out, max-height .3s ease-out, transform .3s ease-out;
     }

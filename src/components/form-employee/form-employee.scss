@@ -1,0 +1,48 @@
+.form-employee {
+  width: 100%;
+  padding: 4rem;
+  background-color: rgba(0, 0, 0, 0.03);
+  border-radius: 0.3rem;
+  margin: 0 0 2rem;
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+
+  &__group {
+    width: 100%;
+    margin-bottom: 1rem;
+
+    label {
+      display: block;
+      margin-bottom: 0.3rem;
+      font-weight: bold;
+    }
+  }
+
+  .checkbox {
+    font-weight: bold;
+    margin-top: 0.7rem;
+    justify-content: flex-start;
+  }
+
+  .error {
+    color: red;
+    font-size: 0.8rem;
+    padding-left: 0.6rem;
+    margin-top: 4px;
+    display: none;
+  }
+
+  .has-error .error {
+    display: inline-block;
+  }
+
+  .button {
+    margin-top: 2rem;
+    z-index: 1;
+  }
+
+  @media (max-width: 768px) {
+    padding: 2rem 1rem;
+  }
+}

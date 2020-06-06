@@ -7,14 +7,17 @@ import Spinner from "../../spinner";
 import ErrorIndicator from "../../error-indicator";
 import EmployeesList from "../../employeesList";
 import Controls from "../../controls";
-import AddEmployee from "../../add-employee";
+import AddEmployeeBtn from "../../add-employee-btn";
 import { Helmet } from "react-helmet";
 import { Container } from "react-bootstrap";
 import './main.scss';
 
 class Main extends Component {
   componentDidMount() {
-    this.props.fetchData();
+    // Зправшиваем данные из исходного файла только один раз
+    if (!this.props.data.length) {
+      this.props.fetchData();
+    }
   }
 
   render() {
@@ -38,7 +41,7 @@ class Main extends Component {
         <Container>
           <Controls />
           <EmployeesList data={ data } />
-          <AddEmployee />
+          <AddEmployeeBtn />
         </Container>
       </>
     );

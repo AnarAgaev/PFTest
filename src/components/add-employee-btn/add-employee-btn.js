@@ -1,9 +1,9 @@
 import React from "react";
-import "./add-employee.scss";
+import "./add-employee-btn.scss";
 import { Col, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
-const AddEmployee = () => {
+const AddEmployeeBtn = () => {
   return (
     <Row>
       <Col className="my-5" >
@@ -15,4 +15,4 @@ const AddEmployee = () => {
   );
 };
 
-export default AddEmployee;
+export default AddEmployeeBtn;

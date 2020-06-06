@@ -1,6 +1,5 @@
 import React from "react";
 import renderElementList from "../../utils/render-element-list";
-
 import SelectItem from "../select-item";
 import "./select.scss";
 

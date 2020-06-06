@@ -7,6 +7,10 @@ const SelectItem = ({
     actionFunc, data
   }) => {
 
+  if (caption === undefined) {
+    caption = val;
+  }
+
   return (
     <li className="select__option"
         onClick={ () => actionFunc(payload, val, data) }>
