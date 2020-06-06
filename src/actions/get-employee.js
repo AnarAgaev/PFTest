@@ -8,7 +8,7 @@ const setEmployee = (employee) => {
 };
 
 const getEmployee = (dispatch, data, employeeId) => {
-  const employee = data.filter( el => el.id == employeeId);
+  const employee = data.filter( el => el.id === parseInt(employeeId));
 
   employee[0].role = getPosition(employee[0].role);
   dispatch(setEmployee(employee[0]));

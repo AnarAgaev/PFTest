@@ -1,6 +1,5 @@
-import { pushErrorToStore, addEmployee, cleanForm, editEmployee } from "../actions";
+import { pushErrorToStore, addEmployee, editEmployee } from "../actions";
 import { getRole } from "../utils";
-import React from "react";
 import routing from "./routing";
 
 const formSubmit = (

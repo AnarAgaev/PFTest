@@ -13,7 +13,8 @@ const Header = () => {
               <span className="header__paragraph-caption">Резюме на hh.ru:</span>
               <a href="https://hh.ru/resume/3a898035ff02716b960039ed1f663746394c34"
                  className="header__link"
-                 target="_blank" >
+                 target="_blank"
+                 rel="noopener noreferrer">
                 hh.ru/resume/3a898035ff02716b960039ed1f663746394c34
               </a>
             </p>
@@ -21,7 +22,8 @@ const Header = () => {
               <span className="header__paragraph-caption">Исходный код на Github:</span>
               <a href="https://github.com/AnarAgaev/PFTest"
                  className="header__link"
-                 target="_blank" >
+                 target="_blank"
+                 rel="noopener noreferrer">
                 github.com/AnarAgaev/PFTest
               </a>
             </p>
@@ -29,7 +31,8 @@ const Header = () => {
               <span className="header__paragraph-caption">Посмотреть реализацию:</span>
               <a href="https://github.com/AnarAgaev/anaragaev.github.io"
                  className="header__link"
-                 target="_blank" >
+                 target="_blank"
+                 rel="noopener noreferrer">
                 github.com/AnarAgaev/anaragaev.github.io
               </a>
             </p>
