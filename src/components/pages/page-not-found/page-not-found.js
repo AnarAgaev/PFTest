@@ -15,14 +15,14 @@ const PageNotFound = () => {
       </Helmet>
       <Container className="pnf">
         <Row>
-          <Col xs={12}>
-            <img src={ image } alt="Page not found" />
+          <Col lg={8}>
+            <img src={ image } alt="Page not found" className="pnf-pic" />
             <h1>Страница не найдена</h1>
-            <h3>
+            <h3 className="pb-5">
               К сожалению, данной страницы на сайте больше нет.
               Возможно, она переименована, перенесена в другой раздел или удалена.
             </h3>
-            <Link to="/">Перейти на главную</Link>
+            <Link to="/" className="button">Перейти на главную</Link>
           </Col>
         </Row>
       </Container>

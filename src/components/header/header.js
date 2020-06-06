@@ -27,10 +27,10 @@ const Header = () => {
             </p>
             <p className="header__paragraph">
               <span className="header__paragraph-caption">Посмотреть реализацию:</span>
-              <a href="https://anaragaev.github.io"
+              <a href="https://github.com/AnarAgaev/anaragaev.github.io"
                  className="header__link"
                  target="_blank" >
-                anaragaev.github.io
+                github.com/AnarAgaev/anaragaev.github.io
               </a>
             </p>
           </Col>

@@ -12,7 +12,7 @@
   left: 50%;
   opacity: 0;
   transform: translate(-50%, -65%);
-  border-radius: 5px;
+  border-radius: 50%;
   z-index: 9;
   transition: top 0s, opacity .5s ease-out, transform .5s ease-out;
 
@@ -41,19 +41,19 @@
     left: 72px;
 
     &:nth-child(1) {
-      background: #575858;
+      background: rgb(0,0,255);
       animation: loading 1.2987012987012987s linear infinite;
       animation-delay: -0.6493506493506493s;
     }
 
     &:nth-child(2) {
-      background: #757675;
+      background: #222;
       animation: loading 1.2987012987012987s linear infinite;
       animation-delay: 0s;
     }
 
     &:nth-child(3) {
-      background: #575858;
+      background: rgb(0,0,255);
       animation: loading-o 1.2987012987012987s linear infinite;
       animation-delay: -0.6493506493506493s;
     }
