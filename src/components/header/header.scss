@@ -6,6 +6,11 @@
     font-size: 3rem;
   }
 
+  h2 {
+    margin-top: 2rem;
+    margin-bottom: 0;
+  }
+
   &__paragraph {
     display: flex;
     margin: 0;
@@ -44,5 +49,10 @@
 
   @media (max-width: 768px) {
     padding: 2rem 0;
+  }
+
+  &__subtitle {
+    display: block;
+    padding: 7px 0;
   }
 }

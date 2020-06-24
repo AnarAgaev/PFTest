@@ -28,7 +28,7 @@ const Header = () => {
               </a>
             </p>
             <p className="header__paragraph">
-              <span className="header__paragraph-caption">Посмотреть реализацию:</span>
+              <span className="header__paragraph-caption">Посмотреть билд:</span>
               <a href="https://github.com/AnarAgaev/anaragaev.github.io"
                  className="header__link"
                  target="_blank"
@@ -36,6 +36,25 @@ const Header = () => {
                 github.com/AnarAgaev/anaragaev.github.io
               </a>
             </p>
+            <h2>Задание:</h2> 
+            <span className="header__subtitle">
+              В рамках тестового задания необходимо реализовать вывод списка сотрудников с
+              возможность фильтрации по категориям Официант, Водитель, Повар и по состоянию
+              В Архиве, а также сортировки по Имени и Дате рождения.
+            </span>
+            <span className="header__subtitle">
+              Необходимо реализовать возможность редактирования данных сотрудника
+              в отдельной форме.Форма открывается по клику на сотрудника в списке сотрудников.
+            </span>
+            <span className="header__subtitle">
+              Необходимо реализовать возможность добавление новых сотрудников.
+            </span>
+            <span className="header__subtitle">
+              Во время работы с приложение все действия должны выводиться в консоль.
+            </span>
+            <span className="header__subtitle">
+              Исходные данные расположены в файле employees.json
+            </span>
           </Col>
         </Row>
       </Container>

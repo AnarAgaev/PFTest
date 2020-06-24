@@ -56,7 +56,20 @@ module.exports = (env = {}) => {
     mode: isProd ? 'production' : isDev && 'development',
 
     output: {
-      filename: isProd ? "main-[hash:8].js" : undefined
+      filename: isProd ? "[name]-[hash:10].js" : undefined
+    },
+
+    optimization: {
+      splitChunks: {
+        cacheGroups: {
+          vendor: {
+            name: 'vendors',
+            test: /node_modules/,
+            chunks: 'all',
+            enforce: true
+          }
+        }
+      }
     },
 
     module: {
